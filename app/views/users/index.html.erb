@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Signatures</h1>
+
+<%= link_to "New Signature", new_user_path %>
+
+<table class="table table-sm table-striped table-hover mt-1">
+    <thead class="table-info">
+      <tr>
+        <th style="width:5px">ID</th>
+        <th style="width:200px">Signature</th>
+        <th style="width:200px colspans=2"></th>
+      </tr>
+    </thead>
+    </tbody>
+    <% @users.each do |user| %>
+        <tr style="height:15px">
+          <td><%= user.id %></td>
+          <td><%= user.signature %></td>
+          <td><%= link_to "Show signature", user %></td>
+          <td><%# button_to "Remove signature", @user, method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+

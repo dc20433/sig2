@@ -1,0 +1,28 @@
+<%= form_for(@user, html: { class: 'sigPad' }) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p style="text-align: center;" class="drawItDesc">Draw your signature</p>
+  <ul style="text-align: center; list-style-type: none;" class="sigNav">
+    <li class="drawIt"><a href="#draw-it">Draw It</a></li>
+    <li class="clearButton"><a href="#clear">Clear</a></li>
+  </ul>
+  <div class="sig sigWrapper">
+    <canvas class="pad" width="198" height="55"></canvas>
+    <input type="hidden" name="output" class="output">
+  </div>
+  <div class="field">
+    <%# f.label :signer_name %><br>
+    <%# f.signature_field :signature %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'I accept the terms of this agreement.' %>
+  </div>
+<% end %>

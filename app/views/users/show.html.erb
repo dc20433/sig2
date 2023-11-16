@@ -1,0 +1,10 @@
+<div style="text-align: center;" >
+  <%= link_to "Sign Again", edit_user_path(@user) %> | <%= link_to "Back", users_path %>
+</div>
+<div style="text-align: center;" >
+  <%= button_to "Clear Signature", @user, method: :delete %>
+</div>
+
+<h3>Signature</h3>
+<p style="text-align: center;" >ID: <%= @user.id %> </p>
+<%= image_tag @user.signature %>

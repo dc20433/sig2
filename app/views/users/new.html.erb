@@ -1,0 +1,7 @@
+<div style="text-align: center;"><%= link_to "Back to users", users_path %></div>
+
+<h3>Please Sign Below</h3>
+<%= form_for @user do |f| %>
+    <%= f.signature_field :signature %>
+    <%= f.submit "Submit" %>
+<% end %>
